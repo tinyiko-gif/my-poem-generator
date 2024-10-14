@@ -1,0 +1,182 @@
+:root {
+  --primary-color: #ea4847;
+}
+
+body {
+  background-color: #fff0cb;
+  background-image: radial-gradient(at 83% 91%, #e9743c 0px, transparent 50%),
+    radial-gradient(at 59% 14%, #e9743c 0px, transparent 50%),
+    radial-gradient(at 10% 86%, #33539d 0px, transparent 50%),
+    radial-gradient(at 26% 35%, #ea4847 0px, transparent 50%),
+    radial-gradient(at 12% 98%, #406aca 0px, transparent 50%),
+    radial-gradient(at 82% 97%, #ea4847 0px, transparent 50%),
+    radial-gradient(at 29% 3%, #e9743c 0px, transparent 50%);
+  background-size: cover;
+  font-family: "Red Hat Display", sans-serif;
+  overflow: hidden;
+}
+
+.grain {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  height: 100%;
+  width: 100%;
+  transform: translateZ(0);
+  z-index: -1;
+}
+
+&::before {
+  animation: noise 1500ms steps(2) infinite;
+  background-image: url(background-noise.png);
+  content: "";
+  height: calc(100% + 20rem);
+  width: calc(100% + 20rem);
+  z-index: -1;
+  position: fixed;
+  top: -10rem;
+  left: -10rem;
+  pointer-events: none;
+  opacity: 0.13;
+  -webkit-animation: noise 1s steps(2) infinite;
+}
+
+.container {
+  margin: 50px auto;
+  max-width: 700px;
+}
+
+.logo {
+  display: block;
+  margin: 15px auto;
+  width: 125px;
+}
+
+h1 {
+  color: whitesmoke;
+  font-family: "Red Hat Display", sans-serif;
+  font-size: 30px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+main small {
+  color: whitesmoke;
+  font-size: 12.5px;
+  font-style: italic;
+  margin-left: 8px;
+  text-transform: lowercase;
+}
+
+main,
+section {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.1);
+  margin: 10px 0;
+  padding: 30px;
+}
+
+section {
+  border-left: 5px solid var(--primary-color);
+}
+
+form {
+  display: flex;
+}
+
+input {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  color: #333;
+  font-family: "Red Hat Display", sans-serif;
+  font-size: 14px;
+  padding: 8px 6px;
+  width: 100%;
+}
+
+input:focus,
+textarea:focus {
+  border-color: transparent;
+  box-shadow: 0 0 10px rgba(245, 245, 245, 0.5);
+  outline: transparent;
+}
+
+.submit-button {
+  background: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  color: whitesmoke;
+}
+
+.poem {
+  color: whitesmoke;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.hidden {
+  display: none;
+  transition: all 500ms ease-in-out;
+}
+
+footer {
+  color: whitesmoke;
+  font-family: "Red Hat Display", sans-serif;
+  font-size: 15px;
+  margin: 10px 0 300px 0;
+  opacity: 0.9;
+  text-align: center;
+}
+
+footer a {
+  color: whitesmoke;
+  text-decoration: none;
+  transition: all 250ms ease-in-out;
+}
+
+footer a:hover {
+  color: var(--primary-color);
+}
+
+@-webkit-keyframes noise {
+  to {
+    transform: translate3d(-7rem, 0, 0);
+  }
+}
+
+@keyframes noise {
+  0% {
+    transform: translate3d(0, 9rem, 0);
+  }
+  10% {
+    transform: translate3d(-1rem, -4rem, 0);
+  }
+  20% {
+    transform: translate3d(-8rem, 2rem, 0);
+  }
+  30% {
+    transform: translate3d(9rem, -9rem, 0);
+  }
+  40% {
+    transform: translate3d(-2rem, 7rem, 0);
+  }
+  50% {
+    transform: translate3d(-9rem, -4rem, 0);
+  }
+  60% {
+    transform: translate3d(2rem, 6rem, 0);
+  }
+  70% {
+    transform: translate3d(7rem, -8rem, 0);
+  }
+  80% {
+    transform: translate3d(-9rem, 1rem, 0);
+  }
+  90% {
+    transform: translate3d(6rem, -5rem, 0);
+  }
+  to {
+    transform: translate3d(-7rem, 0, 0);
+  }
+}
